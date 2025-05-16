@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Add New Patient</h2>
+    <form method="POST">
+        First Name: <input type="text" name="first_name" required><br>
+        Last Name: <input type="text" name="last_name" required><br>
+        DOB: <input type="date" name="date_of_birth"><br>
+        Gender: 
+        <select name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br>
+        Address: <textarea name="address"></textarea><br>
+        Phone: <input type="text" name="phone"><br>
+        Email: <input type="email" name="email"><br>
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}

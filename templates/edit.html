@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Edit Patient</h2>
+    <form method="POST">
+        First Name: <input type="text" name="first_name" value="{{ patient[1] }}" required><br>
+        Last Name: <input type="text" name="last_name" value="{{ patient[2] }}" required><br>
+        DOB: <input type="date" name="date_of_birth" value="{{ patient[3].strftime('%Y-%m-%d') }}"><br>
+        Gender:
+        <select name="gender">
+            <option value="Male" {% if patient[4] == 'Male' %}selected{% endif %}>Male</option>
+            <option value="Female" {% if patient[4] == 'Female' %}selected{% endif %}>Female</option>
+            <option value="Other" {% if patient[4] == 'Other' %}selected{% endif %}>Other</option>
+        </select><br>
+        Address: <textarea name="address">{{ patient[5] }}</textarea><br>
+        Phone: <input type="text" name="phone" value="{{ patient[6] }}"><br>
+        Email: <input type="email" name="email" value="{{ patient[7] }}"><br>
+        <button type="submit">Update</button>
+    </form>
+{% endblock %}
